@@ -1,0 +1,96 @@
+﻿<Window
+    x:Class="StudentTestingSystem.View.TeacherView.TeacherQuestionView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:StudentTestingSystem.View.TeacherView"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:StudentTestingSystem.ViewModel.TeacherViewModel"
+    Title="TeacherQuestionView"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Window.DataContext>
+        <vm:TeacherTestViewModel />
+    </Window.DataContext>
+    <Grid Background="White">
+        <!--#region Разметка-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="9*" />
+        </Grid.RowDefinitions>
+        <!--#endregion-->
+        <!--#region Вверх-->
+        <TextBlock
+            Grid.Row="0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Style="{StaticResource stlTxt}"
+            Text="Вопросы" />
+        <!--#endregion-->
+        <!--#region Низ-->
+        <Grid Grid.Row="1">
+            <!--#region Разметка-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <!--#endregion-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <ListView
+                    x:Name="lvwUsers"
+                    Grid.Column="0"
+                    Margin="10"
+                    ItemsSource="{Binding Tests}"
+                    SelectedItem="{Binding SelectedTest}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn DisplayMemberBinding="{Binding IdTest}" Header="ID" />
+                            <GridViewColumn
+                                Width="100"
+                                DisplayMemberBinding="{Binding Theme.ThemeName}"
+                                Header="Тема" />
+                            <GridViewColumn
+                                Width="200"
+                                DisplayMemberBinding="{Binding TestTime}"
+                                Header="Название" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <StackPanel
+                    Grid.Column="1"
+                    HorizontalAlignment="Left"
+                    Orientation="Vertical">
+                    <Button
+                        Margin="10"
+                        Command="{Binding AddCommand}"
+                        Content="+"
+                        Style="{StaticResource stlBigBtn}" />
+                    <Button
+                        Margin="10"
+                        Command="{Binding EditCommand}"
+                        Content="✎"
+                        Style="{StaticResource stlBigBtn}" />
+                    <Button
+                        Margin="10"
+                        Command="{Binding DeleteCommand}"
+                        Content="🗑️"
+                        Style="{StaticResource stlBigBtn}" />
+                </StackPanel>
+            </Grid>
+            <Button
+                x:Name="btnBack"
+                Grid.Row="1"
+                Margin="10"
+                HorizontalAlignment="Left"
+                Command="{Binding BackCommand}"
+                Content="Назад"
+                Style="{StaticResource stlLtlBtn}" />
+        </Grid>
+        <!--#endregion-->
+    </Grid>
+</Window>

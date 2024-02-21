@@ -1,0 +1,56 @@
+﻿<Window x:Class="StudentTestingSystem.View.AdminView.AdminEditGroupView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:StudentTestingSystem.ViewModel.AdminViewModel"
+        xmlns:local="clr-namespace:StudentTestingSystem.View.AdminView"
+        mc:Ignorable="d"
+         Width="500"
+        Height="400"
+        ResizeMode="NoResize"
+        WindowStyle="None">
+    <Grid>
+        <!--#region Разметка-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <!--#endregion-->
+        <!--#region Кнопки-->
+        <Button
+         x:Name="btEdit"
+         Grid.Row="6"
+         Grid.Column="1"
+         Command="{Binding EditGroupCommand}"
+         Content="Сохранить"
+         Style="{StaticResource stlBigBtn}" />
+        <Button
+         x:Name="btnClose"
+         Grid.Row="6"
+         Grid.Column="0"
+         Command="{Binding BackCommand}"
+         Content="Отмена"
+         Style="{StaticResource stlLtlBtn}" />
+        <!--#endregion-->
+        <!--#region Текст-->
+        <TextBlock
+         Grid.Row="0"
+         Grid.Column="0"
+         Style="{StaticResource stlTxt}"
+         Text="Название" />
+        <!--#endregion-->
+        <!--#region Поля-->
+        <TextBox
+         x:Name="tbxNewName"
+         Grid.Row="0"
+         Grid.Column="1"
+         Style="{StaticResource stlBigTbx}"
+          Text="{Binding SelectedGroup.GroupName, UpdateSourceTrigger=PropertyChanged}"  />
+        <!--#endregion-->
+    </Grid>
+</Window>

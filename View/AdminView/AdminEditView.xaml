@@ -1,0 +1,122 @@
+﻿<Window
+    x:Class="StudentTestingSystem.View.AdminView.AdminEditView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:StudentTestingSystem.View.AdminView"
+    xmlns:vm="clr-namespace:StudentTestingSystem.ViewModel.AdminViewModel"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" d:DataContext="{d:DesignInstance Type=vm:AdminEditViewModel}"
+    Title="AdminEditView"
+    Width="500"
+    Height="800"
+    ResizeMode="NoResize"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Grid Background="Transparent">
+        <!--#region Разметка-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <!--#endregion-->
+        <!--#region Кнопки-->
+        <Button
+            x:Name="btbReg"
+            Grid.Row="6"
+            Grid.Column="1"
+            Command="{Binding EditUserCommand}"
+            Content="Сохранить"
+            Style="{StaticResource stlBigBtn}" />
+        <Button
+            x:Name="btbClose"
+            Grid.Row="6"
+            Command="{Binding BackCommand}"
+            Content="Отмена"
+            Style="{StaticResource stlLtlBtn}" />
+        <!--#endregion-->
+        <!--#region Текст-->
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="0"
+            Style="{StaticResource stlTxt}"
+            Text="Имя" Margin="0,44,10,0" Grid.RowSpan="2" VerticalAlignment="Top" />
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="0"
+            Style="{StaticResource stlTxt}"
+            Text="Фамилия" HorizontalAlignment="Left" Margin="147,0,0,0" />
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="0"
+            Style="{StaticResource stlTxt}"
+            Text="Логин" HorizontalAlignment="Left" Margin="181,0,0,0" />
+        <TextBlock
+            Grid.Row="3"
+            Grid.Column="0"
+            Style="{StaticResource stlTxt}"
+            Text="Пароль" HorizontalAlignment="Left" Margin="164,0,0,0" />
+        <TextBlock
+            Grid.Row="4"
+            Grid.Column="0"
+            Style="{StaticResource stlTxt}"
+            Text="Должность" HorizontalAlignment="Left" Margin="129,0,0,0" />
+        <TextBlock
+            Grid.Row="5"
+            Grid.Column="0"
+            Style="{StaticResource stlTxt}"
+            Text="Класс/группа" HorizontalAlignment="Left" Margin="107,0,0,0" />
+        <!--#endregion-->
+        <!--#region Поля-->
+        <TextBox
+            x:Name="tbxNewName"
+            Grid.Row="0"
+            Grid.Column="1"
+            Style="{StaticResource stlBigTbx}"
+            Text="{Binding SelectedUser.UserName, UpdateSourceTrigger=PropertyChanged}" Margin="10,32,0,0" Grid.RowSpan="2" VerticalAlignment="Top" />
+        <TextBox
+            x:Name="tbxNewSurname"
+            Grid.Row="1"
+            Grid.Column="1"
+            Style="{StaticResource stlBigTbx}"
+            Text="{Binding SelectedUser.UserSurname, UpdateSourceTrigger=PropertyChanged}" Margin="10,0,0,0" />
+        <TextBox
+            x:Name="tbxNewLogin"
+            Grid.Row="2"
+            Grid.Column="1"
+            Style="{StaticResource stlBigTbx}"
+            Text="{Binding SelectedUser.UserLogin, UpdateSourceTrigger=PropertyChanged}" Margin="10,0,0,0" />
+        <TextBox
+            x:Name="tbxNewPassword"
+            Grid.Row="3"
+            Grid.Column="1"
+            Style="{StaticResource stlBigTbx}"
+            Text="{Binding SelectedUser.UserPassword, UpdateSourceTrigger=PropertyChanged}" Margin="10,0,0,0" />
+        <ComboBox
+            x:Name="cmbNewRole"
+            Grid.Row="4"
+            Grid.Column="1"
+            DisplayMemberPath="RoleName"
+            ItemsSource="{Binding Roles}"
+            SelectedItem="{Binding SelectedRole}"
+            Style="{StaticResource stlCmb}" Margin="10,0,0,0" />
+        <ComboBox
+            x:Name="cmbNewGroup"
+            Grid.Row="5"
+            Grid.Column="1"
+            DisplayMemberPath="GroupName"
+            SelectedIndex="0"
+            ItemsSource="{Binding Groups}"
+            SelectedItem="{Binding Group}"
+            Style="{StaticResource stlCmb}" Margin="10,0,0,0" />
+        <!--#endregion-->
+    </Grid>
+</Window>

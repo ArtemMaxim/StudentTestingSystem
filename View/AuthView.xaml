@@ -1,0 +1,99 @@
+﻿<Window
+    x:Class="StudentTestingSystem.View.AuthView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:StudentTestingSystem.View"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:StudentTestingSystem.ViewModel"
+    Title="Авторизация"
+    Width="600"
+    Height="450"
+    Background="White"
+    ResizeMode="NoResize"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Window.DataContext>
+        <vm:AuthViewModel />
+    </Window.DataContext>
+    <Grid>
+        <!--#region Разделение-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <!--#endregion-->
+        <!--#region Вверх-->
+        <Grid>
+            <!--#region Разметка-->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <!--#endregion-->
+            <Button
+                x:Name="btnClose"
+                Grid.Row="0"
+                Grid.Column="1"
+                Width="30"
+                Height="30"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Command="{Binding CloseCommand}"
+                Content="x"
+                Style="{StaticResource stlLtlBtn}" />
+            <!--#region Текст-->
+            <TextBlock
+                Grid.Row="0"
+                Grid.Column="0"
+                Style="{StaticResource stlTxt}"
+                Text="Логин" />
+            <TextBlock
+                Grid.Row="1"
+                Grid.Column="0"
+                Style="{StaticResource stlTxt}"
+                Text="Пароль" />
+            <!--#endregion-->
+            <!--#region Поля-->
+            <TextBox
+                x:Name="tbxUserLogin"
+                Grid.Row="0"
+                Grid.Column="1"
+                Style="{StaticResource stlBigTbx}"
+                Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}" />
+
+            <StackPanel
+                Grid.Row="1"
+                Grid.Column="1"
+                VerticalAlignment="Center">
+                <TextBox
+                    x:Name="tbxUserPassword"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Style="{StaticResource stlBigTbx}"
+                    Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}" />
+                <!--  Visibility="Hidden"  -->
+                <CheckBox
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Content="Показать пароль" />
+            </StackPanel>
+            <!--#endregion-->
+
+        </Grid>
+        <!--#endregion-->
+        <!--#region Низ-->
+        <Button
+            x:Name="btnEnter"
+            Grid.Row="2"
+            Grid.Column="1"
+            Command="{Binding EnterCommand}"
+            Content="Вход"
+            Style="{StaticResource stlBigBtn}" />
+        <!--#endregion-->
+    </Grid>
+</Window>
