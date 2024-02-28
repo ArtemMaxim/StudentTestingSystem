@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="View\AdminView\AdminAddDisciplineView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\AdminView\AdminAddGroupView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\AdminView\AdminDisciplineView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\AdminView\AdminEditDisciplineView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\AdminView\AdminEditGroupView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\AdminView\AdminEditView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\AdminView\AdminGroupView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\AdminView\AdminMainView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\AdminView\AdminRegView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\AdminView\AdminUsersView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\AuthView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\StudentView\StudentMainView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\StudentView\StudentTestingView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\StudentView\StudentTestView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\TeacherView\TeacherAddQuestionView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\TeacherView\TeacherAddTestView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\TeacherView\TeacherAddThemeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\TeacherView\TeacherEditTestView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\TeacherView\TeacherEditThemeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\TeacherView\TeacherMainView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\TeacherView\TeacherQuestionView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\TeacherView\TeacherTestView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\TeacherView\TeacherThemeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\TeacherView\TeacherWorkView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="View\AdminView\AdminAddDisciplineView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AdminView\AdminAddGroupView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AdminView\AdminDisciplineView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AdminView\AdminEditDisciplineView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AdminView\AdminEditGroupView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AdminView\AdminEditView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AdminView\AdminGroupView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AdminView\AdminMainView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AdminView\AdminRegView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AdminView\AdminUsersView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AuthView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\StudentView\StudentMainView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\StudentView\StudentTestingView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\StudentView\StudentTestView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\TeacherView\TeacherAddQuestionView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\TeacherView\TeacherAddTestView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\TeacherView\TeacherAddThemeView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\TeacherView\TeacherEditTestView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\TeacherView\TeacherEditThemeView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\TeacherView\TeacherMainView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\TeacherView\TeacherQuestionView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\TeacherView\TeacherTestView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\TeacherView\TeacherThemeView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\TeacherView\TeacherWorkView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

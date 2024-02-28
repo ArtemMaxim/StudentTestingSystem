@@ -1,0 +1,58 @@
+﻿<Window
+    x:Class="StudentTestingSystem.View.AdminView.AdminEditDisciplineView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:StudentTestingSystem.View.AdminView"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:StudentTestingSystem.ViewModel.AdminViewModel"
+    Title="AdminEditDisciplineView"
+    Width="500"
+    Height="400"
+    ResizeMode="NoResize"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Grid>
+        <!--#region Разметка-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <!--#endregion-->
+        <!--#region Кнопки-->
+        <Button
+            x:Name="btEdit"
+            Grid.Row="6"
+            Grid.Column="1"
+            Command="{Binding EditDisciplineCommand}"
+            Content="Сохранить"
+            Style="{StaticResource stlBigBtn}" />
+        <Button
+            x:Name="btnClose"
+            Grid.Row="6"
+            Grid.Column="0"
+            Command="{Binding BackCommand}"
+            Content="Отмена"
+            Style="{StaticResource stlLtlBtn}" />
+        <!--#endregion-->
+        <!--#region Текст-->
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="0"
+            Style="{StaticResource stlTxt}"
+            Text="Название" />
+        <!--#endregion-->
+        <!--#region Поля-->
+        <TextBox
+            x:Name="tbxNewName"
+            Grid.Row="0"
+            Grid.Column="1"
+            Style="{StaticResource stlBigTbx}"
+            Text="{Binding SelectedDiscipline.DisciplineName, UpdateSourceTrigger=PropertyChanged}" />
+        <!--#endregion-->
+    </Grid>
+</Window>
