@@ -1,0 +1,75 @@
+﻿<Window x:Class="StudentTestingSystem.View.TeacherView.TeacherAddThemeView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:vm="clr-namespace:StudentTestingSystem.ViewModel.TeacherViewModel"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StudentTestingSystem.View.TeacherView"
+        mc:Ignorable="d"
+        Width="500"
+        Height="500"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        Title="TeacherAddThemeView">
+    <Window.DataContext>
+        <vm:TeacherAddThemeViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <!--#region Разметка-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <!--#endregion-->
+        <!--#region Кнопки-->
+        <Button
+         x:Name="btnAdd"
+         Grid.Row="2"
+         Grid.Column="1"
+         Command="{Binding AddThemeCommand}"
+         Content="Добавить"
+         Style="{StaticResource stlBigBtn}" />
+        <Button
+         x:Name="btnClose"
+         Grid.Row="2"
+         Grid.Column="0"
+         Command="{Binding BackCommand}"
+         Content="Отмена"
+         Style="{StaticResource stlLtlBtn}" />
+        <!--#endregion-->
+        <!--#region Текст-->
+        <TextBlock
+         Grid.Row="0"
+         Grid.Column="0"
+         Style="{StaticResource stlTxt}"
+         Text="Название темы" />
+        <TextBlock
+         Grid.Row="1"
+         Grid.Column="0"
+         Style="{StaticResource stlTxt}"
+         Text="Дисциплина" />
+        <!--#endregion-->
+        <!--#region Поля-->
+        <TextBox
+         x:Name="tbxNewName"
+         Grid.Row="0"
+         Grid.Column="1"
+         Style="{StaticResource stlBigTbx}"
+         Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
+        <ComboBox
+         x:Name="cmbNewGroup"
+         Grid.Row="1"
+         Grid.Column="1"
+         DisplayMemberPath="DisciplineName"
+         ItemsSource="{Binding Disciplines}"
+         SelectedItem="{Binding Discipline}"
+         SelectedIndex="0"
+         Style="{StaticResource stlCmb}" />
+        <!--#endregion-->
+    </Grid>
+</Window>

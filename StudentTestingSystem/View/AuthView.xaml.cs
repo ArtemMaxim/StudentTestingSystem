@@ -25,13 +25,5 @@ namespace StudentTestingSystem.View
             InitializeComponent();
         }
 
-        private void btnEnter_Click(object sender, RoutedEventArgs e)
-        {
-            using (TestContext context = new())
-            {
-                context.Roles.Add(new Role { IdRole = 1, RoleName = "admin" });
-                context.SaveChanges();
-            } 
-        }
     }
 }

@@ -1,0 +1,70 @@
+﻿<Window
+    x:Class="StudentTestingSystem.View.AdminView.AdminMainView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:StudentTestingSystem.View.AdminView"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:StudentTestingSystem.ViewModel.AdminViewModel"
+    Title="AdminMainView"
+    Width="800"
+    Height="450"
+    ResizeMode="NoResize"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Window.DataContext>
+        <vm:AdminMainViewModel />
+    </Window.DataContext>
+    <Grid Background="Transparent">
+        <!--#region Разметка-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="3*" />
+        </Grid.RowDefinitions>
+        <!--#endregion-->
+        <!--#region Вверх-->
+        <Grid Grid.Row="0">
+            <!--#region Разметка-->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition Width="0.7*" />
+            </Grid.ColumnDefinitions>
+            <!--#endregion-->
+            <!--#region Кнопки-->
+            <Button
+                x:Name="btnGroup"
+                Grid.Column="0"
+                Command="{Binding GroupCommand}"
+                Content="Классы"
+                Style="{StaticResource stlBigBtn}" />
+            <Button
+                x:Name="btnDisciplines"
+                Grid.Column="1"
+                Content="Предметы"
+                Style="{StaticResource stlBigBtn}" 
+                Command="{Binding DisciplineCommand}"/>
+            <Button
+                x:Name="btnUser"
+                Grid.Column="2"
+                Command="{Binding UserCommand}"
+                Content="Пользователи"
+                Style="{StaticResource stlBigBtn}" />
+            <StackPanel Grid.Column="3">
+                <Button
+                    x:Name="btnClose"
+                    Command="{Binding CloseCommand}"
+                    Content="Закрыть"
+                    Style="{StaticResource stlLtlBtn}" />
+                <Button
+                    x:Name="btnExit"
+                    Command="{Binding ExitCommand}"
+                    Content="Выйти"
+                    Style="{StaticResource stlLtlBtn}" />
+            </StackPanel>
+            <!--#endregion-->
+        </Grid>
+        <!--#endregion-->
+    </Grid>
+</Window>

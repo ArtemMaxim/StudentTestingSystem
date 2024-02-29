@@ -23,12 +23,17 @@ namespace StudentTestingSystem.Models
 
         public TestContext() 
         {
-            Database.EnsureDeleted();
-            Database.EnsureCreated();
+            if(Database == null)
+            {
+                Database.EnsureDeleted();
+                Database.EnsureCreated();
+                TestData.DataTest(this);
+            }
+            
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(LocalDB)\MSSQLLocalDB;Database=helloappdb;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=(LocalDB)\MSSQLLocalDB;Database=testdb;Trusted_Connection=True;");
         }
     }
 }

@@ -1,0 +1,90 @@
+﻿<Window
+    x:Class="StudentTestingSystem.View.TeacherView.TeacherAddTestView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:StudentTestingSystem.View.TeacherView"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:StudentTestingSystem.ViewModel.TeacherViewModel"
+    Title="TeacherAddTestView"
+    Width="500"
+    Height="700"
+    ResizeMode="NoResize"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Window.DataContext>
+        <vm:TeacherAddTestViewModel />
+    </Window.DataContext>
+    <Grid>
+        <Grid>
+            <!--#region Разметка-->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <!--#endregion-->
+            <!--#region Кнопки-->
+            <Button
+                x:Name="btnAdd"
+                Grid.Row="3"
+                Grid.Column="1"
+                Command="{Binding AddTestCommand}"
+                Content="Добавить"
+                Style="{StaticResource stlBigBtn}" />
+            <Button
+                x:Name="btnClose"
+                Grid.Row="3"
+                Grid.Column="0"
+                Command="{Binding BackCommand}"
+                Content="Отмена"
+                Style="{StaticResource stlLtlBtn}" />
+            <Button
+                x:Name="btnQuestion"
+                Grid.Row="2"
+                Grid.Column="1"
+                Command="{Binding BackCommand}"
+                Content="перейти"
+                Style="{StaticResource stlLtlBtn}" />
+            <!--#endregion-->
+            <!--#region Текст-->
+            <TextBlock
+                Grid.Row="0"
+                Grid.Column="0"
+                Style="{StaticResource stlTxt}"
+                Text="Тема теста" />
+            <TextBlock
+                Grid.Row="1"
+                Grid.Column="0"
+                Style="{StaticResource stlTxt}"
+                Text="Длительность" />
+            <TextBlock
+                Grid.Row="2"
+                Grid.Column="0"
+                Style="{StaticResource stlTxt}"
+                Text="Вопросы" />
+            <!--#endregion-->
+            <!--#region Поля-->
+            <ComboBox
+                x:Name="cmbTheme"
+                Grid.Row="0"
+                Grid.Column="1"
+                DisplayMemberPath="ThemeName"
+                ItemsSource="{Binding Themes}"
+                SelectedItem="{Binding SelectedTheme}"
+                Style="{StaticResource stlCmb}" />
+            <TextBox
+                x:Name="tbxTime"
+                Grid.Row="1"
+                Grid.Column="1"
+                Style="{StaticResource stlBigTbx}"
+                Text="{Binding Time, UpdateSourceTrigger=PropertyChanged}" />
+            <!--#endregion-->
+        </Grid>
+    </Grid>
+</Window>
