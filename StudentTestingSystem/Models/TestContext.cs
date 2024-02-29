@@ -33,7 +33,7 @@ namespace StudentTestingSystem.Models
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(LocalDB)\MSSQLLocalDB;Database=testdb;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=(LocalDB)\MSSQLLocalDB;Database=helloappdb;Trusted_Connection=True;");
         }
     }
 }
